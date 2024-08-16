@@ -8,30 +8,37 @@ Python 3 installed.
 Docker and Kubectl installed.
 
 Part 1: Deploying the Flask Application Locally:
- Step 1: Clone the Code
-Clone the code from the repository: git clone <repository_url> 
+ Step 1: Clone the Code: Clone the code from the repository: git clone <repository_url> 
+
  Step 2: Install Dependencies
 The application uses the psutil, Flask, Plotly, and boto3 libraries. 
 Install them using pip: pip3 install -r requirements.txt 
+ 
  Step 3: Run the Application
 To run the application, navigate to the root directory of the project and execute the following command:
 python3 app.py - this will start the server on localhost:5000. Navigate to http://localhost:5000/ on your browser to access the application.
 
 Part 2: To dockerize the Application
  First, Create a Dockerfile in the root directory of the project.
+ 
  Step 2: Build the Docker Image: docker build -t <image_name>. 
+ 
  Step 3: Run the Docker Container: docker run -p 5000:5000 <image_name>
- Step 4: Pushing the Docker Image to ECR
- Step 5: Create an ECR Repository in your AWS console, 
- then Push the Docker Image to ECR: docker push <ecr_repo_uri>:<tag>
+ 
+ Step 4: Pushing the Docker Image to ECR.
+ 
+ Step 5: Create an ECR Repository in your AWS console, then Push the Docker Image to ECR: docker push <ecr_repo_uri>:<tag>
 
 Part 3 - Deploy the application on AWS EKS Cluster
+
 To deploy the application on AWS EKS Cluster, you need to follow the below steps:
+
 Create two IAM Roles: Amazon EKS Cluster IAM Role and Amazon EKS Node IAM Role. 
 
 You can refer to the official AWS documentation for detailed instructions on how to create these roles.
 
 Part 4- Now to create an EKS Cluster and Deploying the Flask Application:
+
  Step 1: Create an EKS Cluster
  Create an EKS cluster and add a node group.
  
