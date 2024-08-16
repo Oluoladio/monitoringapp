@@ -8,15 +8,19 @@ Python 3 installed.
 Docker and Kubectl installed.
 
 Part 1: Deploying the Flask Application Locally:
- Step 1: Clone the Code: Clone the code from the repository: git clone <repository_url> 
+
+ Step 1: Clone the code from the repository: git clone <repository_url> 
 
  Step 2: Install Dependencies
 The application uses the psutil, Flask, Plotly, and boto3 libraries. 
+
 Install them using pip: pip3 install -r requirements.txt 
  
  Step 3: Run the Application
 To run the application, navigate to the root directory of the project and execute the following command:
-python3 app.py - this will start the server on localhost:5000. Navigate to http://localhost:5000/ on your browser to access the application.
+python3 app.py 
+
+this will start the server on localhost:5000. Navigate to http://localhost:5000/ on your browser to access the application.
 
 Part 2: To dockerize the Application
  First, Create a Dockerfile in the root directory of the project.
