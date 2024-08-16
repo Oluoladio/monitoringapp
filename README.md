@@ -16,11 +16,12 @@ The application uses the psutil, Flask, Plotly, and boto3 libraries.
 
 Install them using pip: pip3 install -r requirements.txt 
  
- Step 3: Run the Application
-To run the application, navigate to the root directory of the project and execute the following command:
+ Step 3: To run the application, navigate to the root directory of the project and execute the following command:
 python3 app.py 
 
-this will start the server on localhost:5000. Navigate to http://localhost:5000/ on your browser to access the application.
+this will start the server on localhost:5000. 
+
+Navigate to http://localhost:5000/ on your browser to access the application.
 
 Part 2: To dockerize the Application
  First, Create a Dockerfile in the root directory of the project.
@@ -39,7 +40,7 @@ To deploy the application on AWS EKS Cluster, you need to follow the below steps
 
 Create two IAM Roles: Amazon EKS Cluster IAM Role and Amazon EKS Node IAM Role. 
 
-You can refer to the official AWS documentation for detailed instructions on how to create these roles.
+You can take a look at the official AWS documentation for detailed instructions on how to create these roles.
 
 Part 4- Now to create an EKS Cluster and Deploying the Flask Application:
 
@@ -50,7 +51,9 @@ Part 4- Now to create an EKS Cluster and Deploying the Flask Application:
 
 Note: Before deploying your Kubernetes cluster, ensure your VPC and subnets are appropriately configured. Also, create a security group and add an incoming rule allowing port 5000.
 
- Step 3: Create a Kubernetes deployment and service using a Python script, and name the file "eks.py". Then, copy and paste the script provided below into the file. Once you have done this, run the script by executing the command "python eks.py".
+ Step 3: Create a Kubernetes deployment and service using a Python script, and name the file "eks.py". 
+ 
+ Then, copy and paste the script provided below into the file. Once you have done this, run the script by executing the command "python eks.py".
  
  Replace <image Uri> in the eks.py with the actual URI of your Docker image in the ECR registry.
  
