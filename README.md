@@ -7,7 +7,7 @@ Programmatic access and AWS CLI configured.
 Python 3 installed.
 Docker and Kubectl installed.
 
-Part 1: Deploying the Flask Application Locally:
+# Part 1: Deploy the Flask Application Locally:
 
  Step 1: Clone the code from the repository: git clone <repository_url> 
 
@@ -23,7 +23,7 @@ this will start the server on localhost:5000.
 
 Navigate to http://localhost:5000/ on your browser to access the application.
 
-Part 2: To dockerize the Application
+# Part 2: To dockerize the Application
  First, Create a Dockerfile in the root directory of the project.
  
  Step 2: Build the Docker Image: docker build -t <image_name>. 
@@ -34,7 +34,7 @@ Part 2: To dockerize the Application
  
  Step 5: Create an ECR Repository in your AWS console, then Push the Docker Image to ECR: docker push <ecr_repo_uri>:<tag>
 
-Part 3 - Deploy the application on AWS EKS Cluster
+# Part 3 - Deploy the application on AWS EKS Cluster
 
 To deploy the application on AWS EKS Cluster, you need to follow the below steps:
 
@@ -42,14 +42,14 @@ Create two IAM Roles: Amazon EKS Cluster IAM Role and Amazon EKS Node IAM Role.
 
 You can take a look at the official AWS documentation for detailed instructions on how to create these roles.
 
-Part 4- Now to create an EKS Cluster and Deploying the Flask Application:
+# Part 4- Now to create an EKS Cluster and Deploy the App:
 
  Step 1: Create an EKS Cluster
  Create an EKS cluster and add a node group.
  
  Step 2: Connect to your EKS Cluster, and check that you have installed kubectl correctly by running the following command: kubectl version.
 
-Note: Before deploying your Kubernetes cluster, ensure your VPC and subnets are appropriately configured. Also, create a security group and add an incoming rule allowing port 5000.
+# Note: Before deploying your Kubernetes cluster, ensure your VPC and subnets are appropriately configured. Also, create a security group and add an incoming rule allowing port 5000.
 
  Step 3: Create a Kubernetes deployment and service using a Python script, and name the file "eks.py". 
  
@@ -57,8 +57,9 @@ Note: Before deploying your Kubernetes cluster, ensure your VPC and subnets are 
  
  Replace <image Uri> in the eks.py with the actual URI of your Docker image in the ECR registry.
  
- Step 4: Deploy your application on AWS EKS Cluster: 
- run the following commands
+ Step 4: Deploy your application on AWS EKS Cluster, 
+ 
+ Run the following commands
  
  kubectl get deployment -n default: This will check deployments to see if your container is successfully on the EKS Cluster. 
   
@@ -70,7 +71,7 @@ Finally, to check container port is open to network communication:
 
 This will create a Kubernetes service that exposes the application on port 5000. 
 
-To access the application, you can use the load balancer DNS name or IP address associated with the service on your broswer.
+To access the application, you can use the load balancer DNS name or IP address associated with the service on your browser.
 
 
 
